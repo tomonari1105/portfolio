@@ -1,0 +1,274 @@
+@use "./common" as *;
+
+html {
+  overflow-x: hidden;
+  min-width: 375px;
+}
+body {
+  font-family: $font-family;
+  color: $font-color;
+  background: $bg-orange-gradient;
+  background-attachment: fixed;
+  overflow-x: hidden;
+
+  &.is-fixed {
+    overflow: hidden;
+  }
+}
+
+.inner {
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 20px;
+  min-width: 375px;
+  box-sizing: border-box;
+
+  @include mq(pc) {
+    max-width: 1300px;
+    padding-inline: 60px;
+  }
+}
+
+// ヘッダー
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  height: 78px;
+  flex-shrink: 0;
+  transition: background-color 0.6s;
+
+  @include mq(lg) {
+    height: 90px;
+  }
+}
+
+.header.is-show {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.header__inner {
+  height: 100%;
+}
+
+.header__container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  font-size: 20px;
+  padding: 10px 20px;
+  color: $font-color;
+
+  @include mq(lg) {
+    font-size: 30px;
+    padding: 0 20px;
+  }
+}
+
+.header__menu-button {
+  border: none;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 30px;
+  height: 36px;
+  background: url(../img/header-menu-open.png) center center no-repeat;
+  background-size: 100% auto;
+  z-index: 9999;
+
+  &.is-checked {
+    background: url(../img/header-menu-close.png) center center no-repeat;
+    background-size: 100% auto;
+  }
+
+  @include mq(lg) {
+    display: none;
+  }
+}
+
+.header__contents {
+  padding-top: 60px;
+
+  @include mq(lg) {
+    height: 100%;
+    padding-top: 0;
+  }
+}
+
+.header__nav {
+  padding-inline: 60px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  transform: translateX(100%);
+  transition: transform 0.4s;
+  z-index: 100;
+  background: $bg-orange-gradient;
+
+  &.is-open {
+    transform: translateX(0);
+  }
+
+  @include mq(lg) {
+    background: none;
+    width: auto;
+    height: 100%;
+    position: static;
+    padding: 0;
+    top: 0;
+    transform: translateX(0);
+  }
+}
+
+.header__nav-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-inline: auto;
+  margin-top: 120px;
+
+  @include mq(md) {
+    gap: 30px;
+  }
+
+  @include mq(lg) {
+    width: auto;
+    flex-direction: row;
+    margin-top: 0;
+  }
+
+  @include mq(pc) {
+    gap: 50px;
+  }
+}
+
+.header__nav-item {
+  padding-block: 15px;
+  margin-inline: auto;
+
+  @include mq(md) {
+    padding-block: 20px;
+  }
+
+  @include mq(lg) {
+    margin-inline: 0;
+  }
+
+  &:hover {
+    & .icon-path {
+      color: $accent-blue;
+    }
+    & .header__nav-text {
+      color: $accent-blue;
+    }
+  }
+}
+
+.header__nav-link {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+
+  @include mq(lg) {
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+  }
+}
+
+.button {
+}
+
+.header__nav-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-path {
+  color: $font-color;
+  transition: color 0.6s;
+}
+
+.header__nav-text {
+  font-size: 18px;
+  width: 100px;
+  text-align: center;
+  transition: color 0.6s;
+}
+
+
+
+// 共通パーツ
+.section {
+  margin-top: 100px;
+}
+
+.section__head {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: center;
+  width: 200px;
+  margin-inline: auto;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid $accent-blue;
+    border-left: 2px solid $accent-blue;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid $accent-blue;
+    border-right: 2px solid $accent-blue;
+  }
+}
+
+.section__head-main {
+  font-size: 20px;
+
+  @include mq(pc) {
+    font-size: 24px;
+  }
+}
+
+.section__head-sub {
+  font-size: 18px;
+
+  @include mq(pc) {
+    font-size: 20px;
+  }
+}
+
+// フッター
+.footer {
+  margin-top: 50px;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+}

@@ -1,0 +1,30 @@
+@use "sass:map";
+
+$breakpoints: (
+  "sm": "screen and (max-width: 600px)",
+  "md": "screen and (min-width: 601px)",
+  "lg": "screen and (min-width: 900px)",
+  "pc": "screen and (min-width: 1200px)",
+  "xl": "screen and (min-width: 1500px)",
+);
+
+@mixin mq($breakpoint: "pc") {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+$font-family: "Oswald", "Noto Sans JP", sans-serif;
+
+// メインカラー
+$font-color: #fff8f0;
+$bg-light: #fffaf5;
+$accent-orange: #e85d00;
+$accent-blue: #4fc3d0;
+$bg-orange-gradient:
+  radial-gradient(
+    circle at 85% 50%,
+    rgba(255, 245, 235, 0.25) 0%,
+    rgba(255, 245, 235, 0) 40%
+  ),
+  linear-gradient(to right, #f36f4f 0%, #f78b5f 40%, #f9a56b 70%, #fbc17d 100%);

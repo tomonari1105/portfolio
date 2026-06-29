@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 検索に引っかからないように -->
+    <meta name="robots" content="noindex" />
+
+    <title>
+      千葉を拠点にホームページ制作を行っているTomonariのポートフォリオ
+    </title>
+    <meta
+      name="description"
+      content="WEBコーダーのTOMONARIのポートフォリオサイトです。「WEB制作を頼みたい」「既存のWEBサイトの修正・改善したい」など是非お気軽にご相談ください"
+    />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- style sheet -->
+    <link rel="icon" href="./img/logo.png" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="inner header__inner">
+        <div class="header__container">
+          <h1 class="header__logo">Tomonari's<br />Portfolio</h1>
+          <button
+            type="button"
+            id="js-button-drawer"
+            class="header__menu-button"
+          ></button>
+          <div class="header__contents">
+            <nav id="js-drawer" class="header__nav">
+              <ul class="header__nav-list">
+                <li class="header__nav-item">
+                  <a href="#works" class="header__nav-link button">
+                    <span class="header__nav-icon">
+                      <svg
+                        width="21"
+                        height="16"
+                        viewBox="0 0 21 16"
+                        fill="none"
+                        class="icon-path"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M4.2 0.635498C3.04172 0.635498 2.1 1.57078 2.1 2.72115V11.0638H4.2V2.72115H16.8V11.0638H18.9V2.72115C18.9 1.57078 17.9583 0.635498 16.8 0.635498H4.2ZM0.63 12.1066C0.282187 12.1066 0 12.3868 0 12.7323C0 14.114 1.12875 15.2351 2.52 15.2351H18.48C19.8712 15.2351 21 14.114 21 12.7323C21 12.3868 20.7178 12.1066 20.37 12.1066H0.63Z"
+                          fill="CurrentColor"
+                        ></path>
+                      </svg>
+                    </span>
+                    <span class="header__nav-text">Works</span>
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="#about" class="header__nav-link button">
+                    <span class="header__nav-icon">
+                      <svg
+                        width="17"
+                        height="18"
+                        viewBox="0 0 17 18"
+                        fill="none"
+                        class="icon-path"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13.8125 7.04143C13.8125 8.55504 13.3178 9.95324 12.4844 11.0876L16.6879 15.2657C17.1029 15.6779 17.1029 16.3473 16.6879 16.7595C16.2729 17.1717 15.5988 17.1717 15.1838 16.7595L10.9803 12.5814C9.83808 13.4124 8.43027 13.9005 6.90625 13.9005C3.09121 13.9005 0 10.8304 0 7.04143C0 3.25246 3.09121 0.182373 6.90625 0.182373C10.7213 0.182373 13.8125 3.25246 13.8125 7.04143ZM6.90625 11.79C7.53413 11.79 8.15587 11.6672 8.73595 11.4285C9.31604 11.1899 9.84312 10.8401 10.2871 10.3992C10.7311 9.95824 11.0833 9.43476 11.3235 8.85863C11.5638 8.28251 11.6875 7.66502 11.6875 7.04143C11.6875 6.41784 11.5638 5.80035 11.3235 5.22423C11.0833 4.64811 10.7311 4.12463 10.2871 3.68368C9.84312 3.24273 9.31604 2.89296 8.73595 2.65432C8.15587 2.41568 7.53413 2.29285 6.90625 2.29285C6.27837 2.29285 5.65663 2.41568 5.07654 2.65432C4.49646 2.89296 3.96938 3.24273 3.5254 3.68368C3.08142 4.12463 2.72923 4.64811 2.48895 5.22423C2.24867 5.80035 2.125 6.41784 2.125 7.04143C2.125 7.66502 2.24867 8.28251 2.48895 8.85863C2.72923 9.43476 3.08142 9.95824 3.5254 10.3992C3.96938 10.8401 4.49646 11.1899 5.07654 11.4285C5.65663 11.6672 6.27837 11.79 6.90625 11.79Z"
+                          fill="CurrentColor"
+                        ></path>
+                      </svg>
+                    </span>
+                    <span class="header__nav-text">About</span>
+                  </a>
+                </li>
+                <li class="header__nav-item">
+                  <a
+                    href="#contact"
+                    class="header__nav-link button button--border"
+                  >
+                    <span class="button__icon">
+                      <svg
+                        width="20"
+                        height="16"
+                        viewBox="0 0 20 16"
+                        fill="none"
+                        class="icon-path"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2.5 2.28406C2.15625 2.28406 1.875 2.56339 1.875 2.90479V3.76217L8.61328 9.25563C9.42188 9.91515 10.582 9.91515 11.3906 9.25563L18.125 3.76217V2.90479C18.125 2.56339 17.8438 2.28406 17.5 2.28406H2.5ZM1.875 6.17138V12.8365C1.875 13.1779 2.15625 13.4572 2.5 13.4572H17.5C17.8438 13.4572 18.125 13.1779 18.125 12.8365V6.17138L12.5781 10.6949C11.0781 11.917 8.91797 11.917 7.42188 10.6949L1.875 6.17138ZM0 2.90479C0 1.53531 1.12109 0.421875 2.5 0.421875H17.5C18.8789 0.421875 20 1.53531 20 2.90479V12.8365C20 14.2059 18.8789 15.3194 17.5 15.3194H2.5C1.12109 15.3194 0 14.2059 0 12.8365V2.90479Z"
+                          class="button__icon-path button__icon-path--contact"
+                          fill="CurrentColor"
+                        ></path>
+                      </svg>
+                    </span>
+                    <span class="header__nav-text">Contact</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="fv">
+        <p class="fv__particle"></p>
+        <div class="fv__heading">
+          <p class="fv__heading-main">Web Corder</p>
+          <p class="fv__heading-sub">TOMONARI</p>
+        </div>
+      </div>
+
+      <section id="works" class="section works">
+        <div class="inner">
+          <div class="section__head">
+            <h2 class="section__head-main">Works</h2>
+            <p class="section__head-sub">実績紹介</p>
+          </div>
+          <p class="works__lead-text">
+            これまで制作したWebサイトです。また、当サイトも自ら制作していますので実績の一つとして御覧ください。
+          </p>
+          <ul class="works__list">
+            <li class="works__item">
+              <a href="#" class="works__link">
+                <h3 class="works__link-title">ポートフォリオ</h3>
+                <div class="works__link-img">
+                  <img src="./img/works-card1.png" alt="" />
+                </div>
+              </a>
+            </li>
+            <li class="works__item">
+              <a
+                href="https://yousui-code.com/tomonari-sobolon/"
+                target="_blank"
+                class="works__link"
+              >
+                <h3 class="works__link-title">アクセサリーブランドのLP</h3>
+                <div class="works__link-img">
+                  <img src="./img/works-card2.png" alt="" />
+                </div>
+              </a>
+            </li>
+            <li class="works__item">
+              <a
+                href="https://yousui-code.com/tomonari-OHA/"
+                target="_blank"
+                class="works__link"
+              >
+                <h3 class="works__link-title">アプリのプロモーションサイト</h3>
+                <div class="works__link-img">
+                  <img src="./img/works-card3.png" alt="" />
+                </div>
+              </a>
+            </li>
+            <li class="works__item">
+              <a
+                href="https://yousui-code.com/tomonari-snap-onomichi/"
+                target="_blank"
+                class="works__link"
+              >
+                <h3 class="works__link-title">尾道キャンペーンの紹介サイト</h3>
+                <div class="works__link-img">
+                  <img src="./img/works-card4.png" alt="" />
+                </div>
+              </a>
+            </li>
+          </ul>
+          <a href="works.html" target="_blank" class="works-link">実績一覧を見る</a>
+        </div>
+      </section>
+      <section id="about" class="section about">
+        <div class="inner">
+          <div class="about__container">
+            <h2 class="section__head">
+              <span class="about-head section__head-main">About</span>
+              <span class="about-head section__head-sub">私について</span>
+            </h2>
+            <div class="about__contents">
+              <div class="about__block">
+                <p class="about__text">
+                  1999年生まれ、鳥取県出身の千葉在住。本業の機械メンテナンス業の傍らWeb制作を行っております。
+                </p>
+                <p class="about__text">
+                  家庭を持つと同時に将来への不安ができ、何か副業を始めようと考えたのがきっかけでWeb制作を始めました。
+                </p>
+                <p class="about__text">
+                  デイトラのWeb制作コースを受講し、HTML/CSS/JavaScriptを中心に学習しました。現在はWordPressの学習を終え最終課題に取り掛かっています。
+                </p>
+                <p class="about__text">
+                  コードを書いてて1発で上手くいったときやJSが思い通りに動いたときの気持ち良さは格別でやりがいを感じています。
+                </p>
+              </div>
+              <div class="about__img">
+                <img src="./img/about-img.jpeg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="section contact">
+        <div class="inner">
+          <h2 class="section__head">
+            <span class="about-head section__head-main">Message</span>
+            <span class="about-head section__head-sub">問い合わせ</span>
+          </h2>
+            <a href="#" class="contact__link js-mail-link"
+              >  <svg
+                width="20"
+                height="16"
+                viewBox="0 0 20 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="contact__link-icon"
+              >
+                <path
+                  d="M2.5 2.28406C2.15625 2.28406 1.875 2.56339 1.875 2.90479V3.76217L8.61328 9.25563C9.42188 9.91515 10.582 9.91515 11.3906 9.25563L18.125 3.76217V2.90479C18.125 2.56339 17.8438 2.28406 17.5 2.28406H2.5ZM1.875 6.17138V12.8365C1.875 13.1779 2.15625 13.4572 2.5 13.4572H17.5C17.8438 13.4572 18.125 13.1779 18.125 12.8365V6.17138L12.5781 10.6949C11.0781 11.917 8.91797 11.917 7.42188 10.6949L1.875 6.17138ZM0 2.90479C0 1.53531 1.12109 0.421875 2.5 0.421875H17.5C18.8789 0.421875 20 1.53531 20 2.90479V12.8365C20 14.2059 18.8789 15.3194 17.5 15.3194H2.5C1.12109 15.3194 0 14.2059 0 12.8365V2.90479Z"
+                  fill="currentColor"
+                />
+              </svg>こちらからメールが開きます</a
+            >
+          <div class="contact__block">
+            <p class="contact__text">
+              クリックしメールアプリが起動しない場合下記アドレスにはお問い合わせください。<br />
+              <span class="js-mail-text"></span>
+            </p>
+            <p class="contact__text">
+              依頼に限らずご相談だけでもお気軽にご連絡ください。
+            </p>
+            <p class="contact__text">
+              3日以内に返信がない場合はお手数ですが再度ご連絡ください。
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <small class="footer-copy"
+        >&copy; Tomonari's Portfolio All right reserved</small
+      >
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./JS/index.js"></script>
+  </body>
+</html>
