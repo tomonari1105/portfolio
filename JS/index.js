@@ -8,20 +8,24 @@ jQuery("#js-button-drawer").on("click", function () {
   jQuery("body").toggleClass("is-fixed");
 });
 
-jQuery('a[href^="#"]').on("click", function (e) {
-  const speed = 600;
-  const id = jQuery(this).attr("href");
-  const target = jQuery(id === "#" ? "html" : id);
-  const headerHeight = jQuery(".header").outerHeight();
-  const position = jQuery(target).offset().top - headerHeight;
-  jQuery("html,body").animate(
-    {
-      scrollTop: position,
-    },
-    speed,
-    "swing",
-  );
-});
+// スムーススクロール
+jQuery('a[href^="#"]')
+  .not(".js-mail-link")
+  .on("click", function (e) {
+    e.preventDefault();
+    const speed = 600;
+    const id = jQuery(this).attr("href");
+    const target = jQuery(id === "#" ? "html" : id);
+    const headerHeight = jQuery(".header").outerHeight();
+    const position = jQuery(target).offset().top - headerHeight;
+    jQuery("html,body").animate(
+      {
+        scrollTop: position,
+      },
+      speed,
+      "swing",
+    );
+  });
 
 jQuery('#js-drawer a[href^="#"]').on("click", function (e) {
   jQuery("#js-button-drawer").removeClass("is-checked");
@@ -77,4 +81,22 @@ $(function () {
   $(".js-mail-link").attr("href", "mailto:" + fullEmail);
 
   $(".js-mail-text").text(fullEmail);
+
+  $(".js-copy-mail").on("click", async function () {
+    const $button = $(this);
+
+    try {
+      await navigator.clipboard.writeText(fullEmail);
+      $button.text("コピー済み");
+    } catch (error) {
+      const tempInput = $("<input>").val(fullEmail).appendTo("body").select();
+      document.execCommand("copy");
+      tempInput.remove();
+      $button.text("コピー済み");
+    }
+
+    setTimeout(() => {
+      $button.text("コピー");
+    }, 1500);
+  });
 });
