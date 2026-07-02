@@ -27,9 +27,26 @@ jQuery('a[href^="#"]')
     );
   });
 
+// ページ移行でヘッダー分の高さを加味し移動
+jQuery(window).on("load", function () {
+  const hash = window.location.hash;
+
+  if (hash) {
+    const target = jQuery(hash);
+
+    if (target.length) {
+      const headerHeight = jQuery(".header").outerHeight();
+      const position = target.offset().top - headerHeight;
+
+      jQuery("html, body").scrollTop(position);
+    }
+  }
+});
+
 jQuery('#js-drawer a[href^="#"]').on("click", function (e) {
   jQuery("#js-button-drawer").removeClass("is-checked");
   jQuery("#js-drawer").removeClass("is-open");
+  jQuery("body").removeClass("is-fixed");
 });
 
 // FV アニメーション

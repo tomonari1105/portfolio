@@ -199,6 +199,8 @@ body {
 }
 
 .icon-path {
+  width: 100%;
+  height: 100%;
   color: $font-color;
   transition: color 0.6s;
 }
@@ -209,8 +211,6 @@ body {
   text-align: center;
   transition: color 0.6s;
 }
-
-
 
 // 共通パーツ
 .section {
